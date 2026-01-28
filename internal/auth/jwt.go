@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/spf13/viper"
 )
 
 var (
-	// todo : In production: load from env / secret manager
-	jwtSecret = []byte("super-secret-key")
+	jwtSecret = []byte(viper.GetString("JWT_SECRET_TOKEN"))
 )
 
 // CustomClaims defines what we store inside JWT
